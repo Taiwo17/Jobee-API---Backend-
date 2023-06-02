@@ -7,15 +7,10 @@ const helmet = require('helmet')
 const mongoSanitize = require('express-mongo-sanitize')
 const hpp = require('hpp')
 const cors = require('cors')
-const bodyParser = require('body-parser')
 const server = express()
-const swaggerDocs = require('./utils/swagger')
 
 const connDB = require('./config/database') // Calling the database
 
-// Importing SwaggerDocs
-
-swaggerDocs(server)
 // Middleware for Handling Errors
 const errorMiddleware = require('./middlewares/error')
 const ErrorHandler = require('./utils/errorHandler')
