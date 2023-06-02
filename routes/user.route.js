@@ -22,25 +22,6 @@ const {
 
 router.use(isAuthenticatedUser)
 
-// Creating the yaml file
-
-/**
- * @swagger
- * '/me'
- * get:
- *    tags:
- *    - User
- *    description: Get the authenticate user profile
- *    responses:
- *      200:
- *        description: Serving is up and running
- *        content:
- *          application/json:
- *            schema:
- *              type: object
- *              items:
- *                $ref: '#components/schemas/User
- */
 router.get('/me', getUserProfile) // Getting the full details of a user
 router.get('/jobs/applied', authorizedRoles('user'), appliedJobs)
 router.get(

@@ -5,7 +5,6 @@ const fileUpload = require('express-fileupload')
 const rateLimit = require('express-rate-limit')
 const helmet = require('helmet')
 const mongoSanitize = require('express-mongo-sanitize')
-const xssClean = require('xss-clean')
 const hpp = require('hpp')
 const cors = require('cors')
 const bodyParser = require('body-parser')
@@ -48,9 +47,6 @@ server.use(fileUpload())
 
 // Sanitize data
 server.use(mongoSanitize())
-
-// Preventing XSS Attack
-server.use(xssClean())
 
 // Preventing Parameter Pollution
 server.use(

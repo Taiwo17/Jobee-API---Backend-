@@ -2,65 +2,8 @@ const mongoose = require('mongoose')
 const validator = require('validator')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
-const crypto = require('crypto')
 
 const { Schema, model } = mongoose
-
-/**
- * @swagger
- * components:
- *   schemas:
- *     # User schema definition
- *     User:
- *       type: object
- *       required: 
- *          -name
- *          -email
- *          -password
- *       properties:
- *         # Name field
- *         name:
- *           type: string
- *           description: Please enter your name
-
- *         # Email field
- *         email:
- *           type: string
- *           default: shobo@gmail.com
- *           format: email
- *           description: Please enter your email address
-
- *         # Role field
- *         role:
- *           type: string
- *           enum:
- *             - user
- *             - employer
- *           default: user
- *           description: Please select your correct role
-
- *         # Password field
- *         password:
- *           type: string
- *           minLength: 8
- *           description: Please enter password for your account
-
- *         # CreatedAt field
- *         createdAt:
- *           type: string
- *           format: date-time
- *           default: '2023-06-01T00:00:00Z'
- *           description: Date and time of user creation
-
- *         # ResetPasswordToken field
- *         resetPasswordToken:
- *           type: string
-
- *         # ResetPasswordExpire field
- *         resetPasswordExpire:
- *           type: string
- *           format: date-time
- */
 
 const userSchema = new Schema(
   {
